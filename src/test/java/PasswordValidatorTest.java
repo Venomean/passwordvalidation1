@@ -21,5 +21,17 @@ public class PasswordValidatorTest {
 
     }
 
+    @Test
+    void passwordTest_whenPasswordContainsDigit_expectTrue() {
+
+        //GIVEN
+        String password = "mypassword1";
+        //WHEN
+        boolean actual = (PasswordValidator.containsDigits(password));
+        //THEN
+        boolean expected = true;
+        assertEquals(expected, actual);
+    }
+
 
 }
