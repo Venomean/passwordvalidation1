@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class PasswordValidator {
 
 
@@ -45,6 +48,23 @@ public class PasswordValidator {
 
         return false;
     }
+    public static final List<String> COMMON_PASSWORDS = Arrays.asList(
+            "Password1",
+            "Aa345678",
+            "12345678Aa",
+            "Admin123",
+            "Computer123",
+            "Passwort2"
 
+    );
 
+    public static boolean isCommonPassword(String password) {
+        if (password == null || password.isEmpty()) {
+            return false;
+        }
+
+        return COMMON_PASSWORDS.contains(password);
+    }
 }
+
+

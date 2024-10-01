@@ -32,6 +32,7 @@ public class PasswordValidatorTest {
         boolean expected = true;
         assertEquals(expected, actual);
     }
+
     @Test
     void passwordTest_whenPasswordContainsBothUpperAndLowerCase_expectTrue() {
         // GIVEN
@@ -40,6 +41,17 @@ public class PasswordValidatorTest {
         boolean actual = (PasswordValidator.containsUpperAndLowerCase(password));
         // THEN
         boolean expected = true;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void passwordTest_whenPasswordIsNotCommon_expectFalse() {
+        // GIVEN
+        String password = "UniquePassword123!";
+        // WHEN
+        boolean actual = (PasswordValidator.isCommonPassword(password));
+        // THEN
+        boolean expected = false;
         assertEquals(expected, actual);
     }
 
